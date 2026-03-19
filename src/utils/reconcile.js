@@ -41,9 +41,9 @@ export function reconcileData(platform, bank) {
 
     if (diff <= 0.001) {
       // Check if dates fall in different months → next month settlement
-      if (p.date && b.date) {
-        const pDate = new Date(p.date);
-        const bDate = new Date(b.date);
+      if (p.transaction_date && b.settlement_date) {
+        const pDate = new Date(p.transaction_date);
+        const bDate = new Date(b.settlement_date);
         if (
           !isNaN(pDate) &&
           !isNaN(bDate) &&
